@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block edit %}
+<form action="/edit/{{todo.sno}}" method="POST">
+    <label for="title">Title</label>
+    <input type="text" name = "title">
+    <label for="desc">Description</label>
+    <input type="text" name = "desc">
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

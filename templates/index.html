@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form action="/" method="POST">
+        <label for="title">Title</label>
+        <input type="text" name = "title">
+        <label for="desc">Description</label>
+        <input type="text" name = "desc">
+        <button type="submit">Submit</button>
+    </form>
+    <div class="table-container">
+    <table>
+        <tr>
+        <th>Sno</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+        </tr>
+        {% for todo in allTodo %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{todo.title}}</td>
+            <td>{{todo.desc}}</td>
+            <td><a href = "/delete/{{todo.sno}}" ><button>Done</button></a></td>
+            <td><a href = "/edit/{{todo.sno}}"><button type = "button">Edit</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+    {% block edit %}
+    {%endblock%}
+    
+</body>
+</html>

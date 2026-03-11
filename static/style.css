@@ -1,0 +1,120 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    padding: 30px;
+}
+
+/* Main container */
+.container {
+    max-width: 750px;
+    width: 95%;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Form styling */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* Inputs */
+input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
+button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #4CAF50;
+    color: white;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+/* Table wrapper (for horizontal scroll on phones) */
+.table-container {
+    overflow-x: auto;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+th {
+    background: #2c3e50;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background: #f1f1f1;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+}
+
+/* ---------- MOBILE RESPONSIVENESS ---------- */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 18px;
+    }
+
+    form {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    th, td {
+        font-size: 14px;
+    }
+}
