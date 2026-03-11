@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 import uuid
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///todo.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///instance/todo.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 app.secret_key = "supersecretkey"
@@ -15,6 +15,10 @@ class Todo(db.Model):
 
     def __repr__(self):
         return f"{self.sno} - {self.title}"
+    
+
+with app.app_context():
+    db.create_all()
 
     
 
@@ -54,8 +58,4 @@ def edit(sno):
 
 
 
-with app.app_context():
-    db.create_all()
-    
-if __name__ == "__main__":
-    app.run(debug=True)
+
